@@ -19,6 +19,7 @@ public class Order {
 	private Double taxesAmounts;
 	private Double totalTaxes;
 	private Double totalAmount;
+	
 	private List<Produts> items;
 	
 	
