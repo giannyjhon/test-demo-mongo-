@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.testdemomongo.model.Order;
@@ -19,7 +20,7 @@ import com.example.testdemomongo.service.api.OrderServiceAPI;
 
 @RestController
 @RequestMapping("/api/order")
-@CrossOrigin("*")
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST, RequestMethod.DELETE})
 public class OrderController {
 	
  @Autowired
@@ -28,6 +29,11 @@ public class OrderController {
  @GetMapping(value = "/all")
  public List<Order> getAll(){
 	 return orderServiceAPI.getAll();
+ }
+ 
+ @GetMapping(value = "/prueba")
+ public String mensaje() {
+	 return "LLEGASTE";
  }
  
  @GetMapping(value = "/find/{id}")
