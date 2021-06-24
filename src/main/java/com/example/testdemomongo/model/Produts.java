@@ -11,7 +11,7 @@ public class Produts {
 
 	private String name;
 	private String category;
-	private String uniPrice;
+	private Double uniPrice;
 	private Boolean Active;
 	
 
@@ -20,13 +20,13 @@ public class Produts {
 
 	}
 
-	public Produts(Long id, String name, String category, String uniPrice, Boolean active) {
+	public Produts(Long id, String name, String category, Double uniPrice, Boolean active) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.category = category;
 		this.uniPrice = uniPrice;
-		Active = active;
+		Active = true;
 	}
 
 	public Long getId() {
@@ -53,11 +53,11 @@ public class Produts {
 		this.category = category;
 	}
 
-	public String getUniPrice() {
-		return uniPrice;
+	public Double getUniPrice() {
+		return  uniPrice;
 	}
 
-	public void setUniPrice(String uniPrice) {
+	public void setUniPrice(Double uniPrice) {
 		this.uniPrice = uniPrice;
 	}
 
@@ -66,7 +66,11 @@ public class Produts {
 	}
 
 	public void setActive(Boolean active) {
-		Active = active;
+		
+		
+			Active = active;
+		
+		
 	}
 
 }

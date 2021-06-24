@@ -1,5 +1,6 @@
 package com.example.testdemomongo.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -23,12 +24,10 @@ public class Order {
 	
 	
 	
-	
-
 	public Order() {
-		
-		
+		items = new ArrayList<>();
 	}
+	
 
 	public Order(Long id, String status, Date createAt, String customer, Double taxesAmounts, Double totalTaxes,
 			Double totalAmount, List<Produts> items) {
@@ -72,7 +71,7 @@ public class Order {
 	}
 
 	public void setCreateAt(Date createAt) {
-		this.createAt = createAt;
+		this.createAt = new Date();
 	}
 
 	public String getCustomer() {
